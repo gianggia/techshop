@@ -1,0 +1,13 @@
+﻿@Model List<Student>        
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var item in Model)
+    {
+        <span>Name @item.Name , Age @item.Age</span>
+        <br />
+        
+    }
+<p>Use this page to detail your site's privacy policy.</p>
