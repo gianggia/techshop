@@ -1,0 +1,65 @@
+﻿@using Infrastructure.Products
+@model List<ReviewModel>
+		<ul class="reviews">
+			@{
+				
+				for (int i = 0; i < Model.Count; i++)
+				{
+					<li>
+						<div class="review-heading">
+							<h5 class="name">@Model[i].ReviewerName</h5>
+							<p class="date">@Model[i].CreatedDate</p>
+							<div class="review-rating">
+						@{
+							switch (Model[i].Rating)
+							{
+								case 5:
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									break;
+								case 4:
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									break;
+								case 3:
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									break;
+								case 2:
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									break;
+								case 1:
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o"></i>
+									break;
+								default:
+									break;
+							}
+							}							
+							</div>
+						</div>
+						<div class="review-body">
+							<p>@Model[i].Content</p>
+						</div>
+					</li>
+				}
+			}
+
+		</ul>
+		
